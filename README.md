@@ -9,4 +9,4 @@ MADE USING
 
 PLAY AND ENJOY
 
-HERE : 
+HERE : https://heroic-gelato-daab58.netlify.app/
