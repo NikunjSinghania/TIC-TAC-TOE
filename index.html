@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>TIC-TAC-TOE</title>
+    </head>
+    <body>
+        <h1>TIC-TAC-TOE</h1>
+        <div>
+            <span id="pl1"></span>
+            <span id="pl2"></span>
+            <span id="pl3"></span>
+            <span id="pl4"></span>
+            <span id="pl5"></span>
+            <span id="pl6"></span>
+            <span id="pl7"></span>
+            <span id="pl8"></span>
+            <span id="pl9"></span>
+        </div>
+    </body>
+    <script>
+        let pl1 = document.querySelector("#pl1");
+        let pl2 = document.querySelector("#pl2");
+        let pl3 = document.querySelector("#pl3");
+        let pl4 = document.querySelector("#pl4");
+        let pl5 = document.querySelector("#pl5");
+        let pl6 = document.querySelector("#pl6");
+        let pl7 = document.querySelector("#pl7");
+        let pl8 = document.querySelector("#pl8");
+        let pl9 = document.querySelector("#pl9");
+
+        function check() {
+            if (pl1.innerHTML == pl2.innerHTML && pl1.innerHTML != "" && pl2.innerHTML != "" && pl2.innerHTML == pl3.innerHTML && pl2.innerHTML != "" && pl3.innerHTML != "") {
+                alert("WIN", pl1.innerHTML);
+                window.location.reload();
+            } else if (pl4.innerHTML == pl5.innerHTML && pl4.innerHTML != "" && pl5.innerHTML != "" && pl5.innerHTML == pl6.innerHTML && pl5.innerHTML != "" && pl6.innerHTML != "") {
+                alert("WIN", pl4.innerHTML);
+                window.location.reload();
+            } else if (pl7.innerHTML == pl8.innerHTML && pl7.innerHTML != "" && pl8.innerHTML != "" && pl8.innerHTML == pl9.innerHTML && pl8.innerHTML != "" && pl9.innerHTML != "") {
+                alert("WIN", pl7.innerHTML);
+                window.location.reload();
+            } else if (pl1.innerHTML == pl4.innerHTML && pl1.innerHTML != "" && pl4.innerHTML != "" && pl4.innerHTML == pl7.innerHTML && pl4.innerHTML != "" && pl7.innerHTML != "") {
+                alert("WIN", pl1.innerHTML);
+                window.location.reload();
+            } else if (pl2.innerHTML == pl5.innerHTML && pl2.innerHTML != "" && pl5.innerHTML != "" && pl5.innerHTML == pl8.innerHTML && pl5.innerHTML != "" && pl8.innerHTML != "") {
+                alert("WIN", pl2.innerHTML);
+                window.location.reload();
+            } else if (pl3.innerHTML == pl6.innerHTML && pl3.innerHTML != "" && pl6.innerHTML != "" && pl6.innerHTML == pl9.innerHTML && pl6.innerHTML != "" && pl9.innerHTML != "") {
+                alert("WIN", pl3.innerHTML);
+                window.location.reload();
+            } else if (pl1.innerHTML == pl5.innerHTML && pl1.innerHTML != "" && pl5.innerHTML != "" && pl5.innerHTML == pl9.innerHTML && pl5.innerHTML != "" && pl9.innerHTML != "") {
+                alert("WIN", pl1.innerHTML);
+                window.location.reload();
+            } else if (pl3.innerHTML == pl5.innerHTML && pl3.innerHTML != "" && pl5.innerHTML != "" && pl5.innerHTML == pl7.innerHTML && pl5.innerHTML != "" && pl7.innerHTML != "") {
+                alert("WIN", pl3.innerHTML);
+                window.location.reload();
+            }
+        }
+
+        function all() {
+            if (pl1.innerHTML != "" && pl2.innerHTML != "" && pl3.innerHTML != "" && pl4.innerHTML != "" && pl5.innerHTML != "" && pl6.innerHTML != "" && pl7.innerHTML != "" && pl8.innerHTML != "") {
+                alert("NO ONE WINS AGAIN");
+                window.location.reload();
+            }
+        }
+
+        let chance = 0;
+        document.querySelectorAll("span").forEach((e) => {
+            e.addEventListener("click", () => {
+                if (e.innerHTML == "") {
+                    if (chance == 0) {
+                        e.innerHTML = "❌";
+                        chance = 1;
+                    } else {
+                        e.innerHTML = "⭕";
+                        chance = 0;
+                    }
+                }
+                check();
+                all();
+            });
+        });
+    </script>
+</html>
